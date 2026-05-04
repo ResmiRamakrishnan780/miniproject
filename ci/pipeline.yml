@@ -1,0 +1,17 @@
+stages:
+  - build
+  - test
+  - docker
+
+build:
+  script:
+    - echo "Building services"
+
+test:
+  script:
+    - echo "Running tests"
+
+docker:
+  script:
+    - docker build -t product-service ./product-service
+    - docker build -t order-service ./order-service
